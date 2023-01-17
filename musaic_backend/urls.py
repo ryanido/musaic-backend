@@ -19,5 +19,6 @@ from backend import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('recommendations/',views.recommendations)
+    path('recommendations/',views.recommendations),
+    path('recently-played/', views.recently_played)
 ]

@@ -119,4 +119,18 @@ def format_recommendations(response):
         albums.append(album_info)
     return {"tracks":tracks,"albums": albums}
 
+def format_recently_played(response):
+    tracks = []
+    for track in response['items']:
+        track_info = {
+            'id': track['track']['id'],
+            'name': track['track']['name'],
+            'artist': track['track']['artists'][0]['name'],
+            'cover': track['track']['album']['images'][0]['url'],
+            'uri': track['track']['uri']
+        }
+        tracks.append(track_info)
+    return tracks
+
+
 
