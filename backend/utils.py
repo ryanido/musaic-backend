@@ -130,7 +130,7 @@ def format_recently_played(response):
             'uri': track['track']['uri']
         }
         tracks.append(track_info)
-    return tracks
+    return {"tracks":tracks}
 
 
 
