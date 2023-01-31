@@ -25,8 +25,15 @@ def recently_played(request):
         return HttpResponse("Failed to get tracks", status=response.status_code)
 
 
-def recommendations(request):
+def user_recommendations(request):
     # Get the code from the request body
     code = request.GET.get('code')
-    recommendations = get_recommendations(code)
+    recommendations = get_user_recommendations(code)
+    return recommendations
+
+def song_recommendations(request):
+    code = request.GET.get('code')
+    song = request.GET.get('song')
+    artist = request.GET.get('artist')
+    recommendations = get_song_recommendations(code=code,song=song, artist=artist)
     return recommendations
